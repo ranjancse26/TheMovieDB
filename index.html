@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>The Movie DB Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+
+    <script src="/lib/angular.min.js"></script>    
+    <script src="/Modules/Movie/movie.js"></script>
+    <script src="/Modules/Collection/collection.js"></script>
+    <script src="/Modules/Keyword/keyword.js"></script>
+    <script src="/Modules/Company/company.js"></script>
+    <script src="/Modules/Person/person.js"></script>
+    <script src="/Modules/List/list.js"></script>
+    <script src="/Modules/Config/config.js"></script>
+    <script src="/Modules/ApiConfiguration/apiconfiguration.js"></script>
+    <script src="/Modules/Http/http.js"></script>
+    <script src="/Modules/tmbdb-api.js"></script>
+    <script src="/Controller/FacadeController.js"></script>    
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <h1>The Movie DB - API Demo</h1>
+        </div>
+    </div>
+    <br/>
+    <div class="row" 
+         ng-app='tmdb-demo' 
+         ng-controller="FacadeController">
+    
+        <div class="span6">
+            <h1>Config</h1>
+
+            <form ng-submit='exec("configuration","get")'>
+                <button type="submit" class="btn">Show configuration</button>
+            </form>
+
+            <br/>
+            <h1>Search</h1>
+
+            <form class="form-search" ng-submit='exec("search","movie",query)'>
+                <input type="text" ng-model="query">
+                <button class="btn" type="submit">Search Movie</button>
+            </form>
+            <form class="form-search" ng-submit='exec("search","collection",query)'>
+                <input type="text" ng-model="query">
+                <button class="btn" type="submit">Search Collection</button>
+            </form>
+            <form class="form-search" ng-submit='exec("search","company",query)'>
+                <input type="text" ng-model="query">
+                <button class="btn" type="submit">Search company</button>
+            </form>
+            <form class="form-search" ng-submit='exec("search","person",query)'>
+                <input type="text" ng-model="query">
+                <button class="btn" type="submit">Search Person</button>
+            </form>
+            <form class="form-search" ng-submit='exec("search","list",query)'>
+                <input type="text" ng-model="query">
+                <button class="btn" type="submit">Search List</button>
+            </form>
+            <form class="form-search" ng-submit='exec("search","keyword",query)'>
+                <input type="text" ng-model="query">
+                <button class="btn" type="submit">Keywords</button>
+            </form>
+        </div>
+        <div class="span6">
+            <h1>Search Results</h1>
+
+            <p>
+            <pre>{{searchResult}}</pre>
+            </p>
+        </div>
+        <div class="row">
+            <div class="span12">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    label { padding: 0 10px; }
+</style>
+
+</body>
+</html>

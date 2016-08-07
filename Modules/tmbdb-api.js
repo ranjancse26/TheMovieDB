@@ -1,0 +1,9 @@
+angular.module('tmdb-api',
+			['tmdb-api-movie',
+			 'tmdb-api-collection',
+			 'tmdb-api-keyword',
+			 'tmdb-api-people',
+			 'tmdb-api-company',
+			 'tmdb-api-list',
+			 'tmdb-api-configuration'
+			]);
