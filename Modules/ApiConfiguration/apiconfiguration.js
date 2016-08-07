@@ -10,9 +10,9 @@ TmdbApiConfiguration.$inject = ['TmdbHTTP'];
 function TmdbApiConfiguration(TmdbHTTP) {
     return {
         get : function (options) {
-	            return TmdbHTTP(angular.extend({}, options, {
-	                url:'configuration'
-	            }));
+            return TmdbHTTP(angular.extend({}, options, {
+                url:'configuration'
+            }));
         }
     }
 }
