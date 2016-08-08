@@ -1,30 +1,45 @@
 angular.module('tmdb-api-people', ['tmdb-http'])
-    .factory('TmdbApiPeople', ["TmdbHTTP", function (TmdbHTTP) {
+       .factory('TmdbApiPeople', TmdbApiPeople);
+
+TmdbApiPeople.$inject = ['TmdbHTTP']
+
+function TmdbApiPeople(TmdbHTTP) {
+
     return {
-        person:function (options) {
-            return TmdbHTTP(angular.extend({}, options, {
+        person : person,
+        credits : credits,
+        images : images,
+        changes : changes,
+        latest : latest
+    }
+
+    function person(options){
+        return TmdbHTTP(angular.extend({}, options, {
                 url:'person/' + options.query
-            }));
-        },
-        credits:function (options) {
-            return TmdbHTTP(angular.extend({}, options, {
+        }));
+    }
+
+    function credits(options){
+        return TmdbHTTP(angular.extend({}, options, {
                 url:'person/' + options.query + "/credits"
-            }));
-        },
-        images:function (options) {
-            return TmdbHTTP(angular.extend({}, options, {
+        }));
+    }
+
+    function images(options){
+        return TmdbHTTP(angular.extend({}, options, {
                 url:'person/' + options.query + "/images"
-            }));
-        },
-        changes:function (options) {
-            return TmdbHTTP(angular.extend({}, options, {
+        }));
+    }
+
+    function changes(options){
+        return TmdbHTTP(angular.extend({}, options, {
                 url:'person/' + options.query + "/changes"
-            }));
-        },
-        latest:function (options) {
-            return TmdbHTTP(angular.extend({}, options, {
+        }));
+    }
+
+    function latest(options){
+        return TmdbHTTP(angular.extend({}, options, {
                 url:'person/latest'
-            }));
-        }
-    };
-}]);
+        }));
+    }
+}
