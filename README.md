@@ -1,5 +1,5 @@
 # TheMovieDB
-An AngularJS app for "The Movie DB" - https://www.themoviedb.org
+An AngularJS app for "The Movie DB" - https://www.themoviedb.org based on the existing opensource code - https://github.com/gnalFF/lub-tmbd
 
 # Search Movies Demo
 
